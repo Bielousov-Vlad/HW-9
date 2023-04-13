@@ -62,16 +62,44 @@
 //   }
 
 
-  //   9. Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
 
-  let num = parseInt(prompt('Введіть натуральне число:'));
-  if (isNaN(num) || num <= 0) {
-    console.log('Некоректне введення. Будь ласка, введіть натуральне число.');
-  } else {
-    console.log(`Дільники числа ${num}:`);
-    for (let i = 1; i <= num; i++) {
-      if (num % i === 0) {
-        console.log(i);
-      }
-    }
+
+// 9. Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
+
+let num = parseInt(prompt("Введіть натуральне число:"));
+document.write("Дільники числа " + num + ": ");
+for (let i = 1; i <= num; i++) {
+  if (num % i === 0) {
+    document.write(i + " ");
   }
+}
+document.write("<br>");
+
+// 10.  Визначення кількості парних дільників
+
+let evenDivisorsCount = 0;
+for (let i = 1; i <= num; i++) {
+  if (num % i === 0 && i % 2 === 0) {
+    evenDivisorsCount++;
+  }
+}
+document.write("Кількість парних дільників: " + evenDivisorsCount + "<br>");
+
+//  11. Знайти суму парних дільників
+let sumOfEvenDivisors = 0;
+for (let i = 1; i <= num; i++) {
+  if (num % i === 0 && i % 2 === 0) {
+    sumOfEvenDivisors += i;
+  }
+}
+document.write("Сума парних дільників: " + sumOfEvenDivisors + "<br>");
+
+//  12. Надрукувати повну таблицю множення від 1 до 10
+document.write("Повна таблиця множення від 1 до 10: <br>");
+for (let i = 1; i <= 10; i++) {
+  for (let j = 1; j <= 10; j++) {
+    document.write(i + " * " + j + " = " + (i * j) + "<br>");
+  }
+  document.write("<br>");
+}
+  
